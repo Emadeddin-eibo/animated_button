@@ -20,26 +20,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   return MaterialApp(
-  title: 'Animated Button Demo',
-  theme: ThemeData(
-  primarySwatch: Colors.blue,
- ),  home: Demo(),
- ); }}
+    title: 'Animated Button Demo',
+    theme: ThemeData(
+        primarySwatch: Colors.blue,
+    ),
+    home: Demo(),
+    );
+  }
+}
 
 class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   return Scaffold(
-  body: Center(
-  child: AnimatedButton(
-  child: Text(
-  'Simple button',
-  style: TextStyle(
-  fontSize: 22,
-  color: Colors.white,
-  fontWeight: FontWeight.w500,
- ), ),  onPressed: () {},
- ), ), ); }}
+    body: Center(
+      child: AnimatedButton(
+          child: Text(
+                'Simple button',
+                style: TextStyle(
+                fontSize: 22,
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                ),
+           ),
+          onPressed: () {},
+          ),
+      ),
+    );
+  }
+}
 ```
 
 ## Button attributes
@@ -57,8 +66,8 @@ AnimatedButton(
   // for lighter colors such white!
   shadowDegree: ShadowDegree.dark,
   color: Colors.blue,
-),
-),
+)
+
 ```
 
 ## License
