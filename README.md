@@ -7,7 +7,7 @@ A very simple and customizable animated button.
 
 Nothing difficult here, yet!
 
-![](giphy.gif) ![](example.png)
+![](giphy.gif) ![](example.png){:width="200px"}
 
 ## Simple Example
 ```dart
