@@ -1,6 +1,6 @@
 name: animated_button
-description: A very simple animated customizable button.
-version: 0.1.1
+description: A simple andd highly customizable Animated button with 3D like effect.
+version: 0.1.2
 homepage: https://github.com/Emadeddin-eibo/animated_button
 
 environment:
