@@ -24,7 +24,8 @@ class AnimatedButton extends StatefulWidget {
     this.color = Colors.blue,
     this.height = 64,
     this.shadowDegree = ShadowDegree.light,
-    this.width = 200, this.duration = 70,
+    this.width = 200,
+    this.duration = 70,
   })  : assert(child != null),
         super(key: key);
 

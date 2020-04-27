@@ -1,6 +1,7 @@
 # Animated Button
 
 A very simple and customizable animated button.
+Providing simple animation, and many customizable attributes such height, width, child, ... etc.
 
 
 ## Getting Started
