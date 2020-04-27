@@ -8,7 +8,7 @@ Providing simple animation, and many customizable attributes such height, width,
 
 Nothing difficult here, yet!
 
-![](giphy.gif) ![](example.png){:width="200px"}
+![](giphy.gif) ![](example.png)
 
 ## Simple Example
 ```dart
@@ -70,6 +70,8 @@ AnimatedButton(
 )
 
 ```
+
+### For more examples, check example folder
 
 ## License
 MIT License.
