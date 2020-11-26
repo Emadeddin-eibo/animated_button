@@ -1,6 +1,6 @@
 import 'package:animated_button/animated_button.dart';
 import 'package:flutter/material.dart';
-import 'page.dart';
+import 'package:example/page.dart';
 
 void main() => runApp(MyApp());
 
@@ -83,7 +83,7 @@ class Demo extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Page()));
+                    .push(MaterialPageRoute(builder: (context) => AnotherPage()));
               },
               width: 300,
               color: Colors.redAccent,
