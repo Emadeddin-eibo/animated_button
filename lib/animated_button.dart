@@ -15,18 +15,20 @@ class AnimatedButton extends StatefulWidget {
   final double width;
   final ShadowDegree shadowDegree;
   final int duration;
+  final BoxShape shape;
 
-  const AnimatedButton({
-    Key key,
-    @required this.onPressed,
-    @required this.child,
-    this.enabled = true,
-    this.color = Colors.blue,
-    this.height = 64,
-    this.shadowDegree = ShadowDegree.light,
-    this.width = 200,
-    this.duration = 70,
-  })  : assert(child != null),
+  const AnimatedButton(
+      {Key key,
+      @required this.onPressed,
+      @required this.child,
+      this.enabled = true,
+      this.color = Colors.blue,
+      this.height = 64,
+      this.shadowDegree = ShadowDegree.light,
+      this.width = 200,
+      this.duration = 70,
+      this.shape = BoxShape.rectangle})
+      : assert(child != null),
         super(key: key);
 
   @override
@@ -57,13 +59,15 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                 height: _height,
                 width: widget.width,
                 decoration: BoxDecoration(
-                  color: widget.enabled
-                      ? darken(widget.color, widget.shadowDegree)
-                      : darken(Colors.grey, widget.shadowDegree),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
+                    color: widget.enabled
+                        ? darken(widget.color, widget.shadowDegree)
+                        : darken(Colors.grey, widget.shadowDegree),
+                    borderRadius: widget.shape != BoxShape.circle
+                        ? BorderRadius.all(
+                            Radius.circular(16),
+                          )
+                        : null,
+                    shape: widget?.shape),
               ),
             ),
             AnimatedPositioned(
@@ -74,11 +78,13 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                 height: _height,
                 width: widget.width,
                 decoration: BoxDecoration(
-                  color: widget.enabled ? widget.color : Colors.grey,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12),
-                  ),
-                ),
+                    color: widget.enabled ? widget.color : Colors.grey,
+                    borderRadius: widget.shape != BoxShape.circle
+                        ? BorderRadius.all(
+                            Radius.circular(16),
+                          )
+                        : null,
+                    shape: widget?.shape),
                 child: Center(
                   child: widget.child,
                 ),
