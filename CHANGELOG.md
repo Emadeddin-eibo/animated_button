@@ -1,3 +1,8 @@
+## [0.1.3] - 26/November/2020
+
+* Added the capability to make circle shaped or any other supported shaped animated buttons.
+Thanks to @Saad29
+
 ## [0.1.2] - 28/April/2020
 
 * Maintenance update
