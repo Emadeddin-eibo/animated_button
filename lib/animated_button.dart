@@ -84,6 +84,11 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                             Radius.circular(16),
                           )
                         : null,
+                    gradient: widget.shape != BoxShape.circle
+                        ? LinearGradient(colors: [
+                      Color(0xFFFEE140),
+                      Color(0xFFFA709A),
+                    ]) : null,
                     shape: widget?.shape),
                 child: Center(
                   child: widget.child,
