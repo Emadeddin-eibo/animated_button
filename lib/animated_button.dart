@@ -18,16 +18,16 @@ class AnimatedButton extends StatefulWidget {
   final BoxShape shape;
 
   const AnimatedButton(
-      {Key key,
-      @required this.onPressed,
-      @required this.child,
-      this.enabled = true,
-      this.color = Colors.blue,
-      this.height = 64,
-      this.shadowDegree = ShadowDegree.light,
-      this.width = 200,
-      this.duration = 70,
-      this.shape = BoxShape.rectangle})
+      {Key? key,
+        required this.onPressed,
+        required this.child,
+        this.enabled = true,
+        this.color = Colors.blue,
+        this.height = 64,
+        this.shadowDegree = ShadowDegree.light,
+        this.width = 200,
+        this.duration = 70,
+        this.shape = BoxShape.rectangle})
       : assert(child != null),
         super(key: key);
 
@@ -64,10 +64,10 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                         : darken(Colors.grey, widget.shadowDegree),
                     borderRadius: widget.shape != BoxShape.circle
                         ? BorderRadius.all(
-                            Radius.circular(16),
-                          )
+                      Radius.circular(16),
+                    )
                         : null,
-                    shape: widget?.shape),
+                    shape: widget.shape),
               ),
             ),
             AnimatedPositioned(
@@ -81,10 +81,10 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                     color: widget.enabled ? widget.color : Colors.grey,
                     borderRadius: widget.shape != BoxShape.circle
                         ? BorderRadius.all(
-                            Radius.circular(16),
-                          )
+                      Radius.circular(16),
+                    )
                         : null,
-                    shape: widget?.shape),
+                    shape: widget.shape),
                 child: Center(
                   child: widget.child,
                 ),
