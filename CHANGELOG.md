@@ -1,4 +1,4 @@
-## [0.1.3+1] - 20/March/2021
+## [0.2.0] - 20/March/2021
 * Migrated to null safety (Thanks to @Saad29)
 
 ## [0.1.3] - 26/November/2020
