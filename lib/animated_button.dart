@@ -37,8 +37,8 @@ class AnimatedButton extends StatefulWidget {
 
 class _AnimatedButtonState extends State<AnimatedButton> {
   static const Curve _curve = Curves.easeIn;
-  static const double _shadowHeight = 4;
-  double _position = 4;
+  static const double _shadowHeight = 6;
+  double _position = 6;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                         : darken(Colors.grey, widget.shadowDegree),
                     borderRadius: widget.shape != BoxShape.circle
                         ? BorderRadius.all(
-                      Radius.circular(16),
+                      Radius.circular(80),
                     )
                         : null,
                     shape: widget.shape),
@@ -81,7 +81,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                     color: widget.enabled ? widget.color : Colors.grey,
                     borderRadius: widget.shape != BoxShape.circle
                         ? BorderRadius.all(
-                      Radius.circular(16),
+                      Radius.circular(80),
                     )
                         : null,
                     shape: widget.shape),
