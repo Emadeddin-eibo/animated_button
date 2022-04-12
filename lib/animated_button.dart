@@ -16,6 +16,7 @@ class AnimatedButton extends StatefulWidget {
   final ShadowDegree shadowDegree;
   final int duration;
   final BoxShape shape;
+  final BorderRadiusGeometry? borderRadius;
 
   const AnimatedButton(
       {Key? key,
@@ -27,7 +28,8 @@ class AnimatedButton extends StatefulWidget {
         this.shadowDegree = ShadowDegree.light,
         this.width = 200,
         this.duration = 70,
-        this.shape = BoxShape.rectangle})
+        this.shape = BoxShape.rectangle,
+        this.borderRadius})
       : assert(child != null),
         super(key: key);
 
@@ -63,9 +65,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                         ? darken(widget.color, widget.shadowDegree)
                         : darken(Colors.grey, widget.shadowDegree),
                     borderRadius: widget.shape != BoxShape.circle
-                        ? BorderRadius.all(
-                      Radius.circular(16),
-                    )
+                        ? widget.borderRadius ?? BorderRadius.circular(16)
                         : null,
                     shape: widget.shape),
               ),
@@ -80,9 +80,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                 decoration: BoxDecoration(
                     color: widget.enabled ? widget.color : Colors.grey,
                     borderRadius: widget.shape != BoxShape.circle
-                        ? BorderRadius.all(
-                      Radius.circular(16),
-                    )
+                        ? widget.borderRadius ?? BorderRadius.circular(16)
                         : null,
                     shape: widget.shape),
                 child: Center(
