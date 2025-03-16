@@ -1,6 +1,6 @@
 import 'package:animated_button/animated_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:example/page.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,9 +9,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Animated Button Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: Demo(),
     );
   }
@@ -23,29 +20,33 @@ class Demo extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 20),
             AnimatedButton(
+              onPressed: () {},
+              color: Colors.blue,
+              enabled: true,
+              shadowDegree: ShadowDegree.light,
+              borderRadius: 8,
+              duration: 85,
+              height: 40,
+              width: 120,
               child: Text(
                 'Simple button',
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 14,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              color: Colors.blue,
-              onPressed: () {},
-              enabled: true,
-              shadowDegree: ShadowDegree.light,
             ),
+            SizedBox(height: 24),
             AnimatedButton(
               child: Text(
                 'Slow animation',
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 14,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
@@ -56,13 +57,12 @@ class Demo extends StatelessWidget {
               shadowDegree: ShadowDegree.light,
               duration: 400,
             ),
-            SizedBox(height: 20),
-            SizedBox(height: 20),
+            SizedBox(height: 24),
             AnimatedButton(
               child: Text(
-                'Simple button',
+                'Custom Radius',
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 14,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
@@ -70,31 +70,15 @@ class Demo extends StatelessWidget {
               color: Colors.blue,
               onPressed: () {},
               enabled: true,
+              borderRadius: 25,
               shadowDegree: ShadowDegree.light,
             ),
-            AnimatedButton(
-              child: Text(
-                'Navigate to another page',
-                style: TextStyle(
-                  fontSize: 22,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => AnotherPage()));
-              },
-              width: 300,
-              color: Colors.redAccent,
-              shadowDegree: ShadowDegree.dark,
-              enabled: true,
-            ),
+            SizedBox(height: 24),
             AnimatedButton(
               child: Text(
                 'I\'m disabled',
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 14,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
@@ -106,20 +90,7 @@ class Demo extends StatelessWidget {
               color: Colors.green,
               enabled: false,
             ),
-            AnimatedButton(
-              child: Text(
-                'Custom height',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              onPressed: () {},
-              height: 40,
-              shadowDegree: ShadowDegree.dark,
-              color: Colors.indigo,
-            ),
+            SizedBox(height: 24),
             AnimatedButton(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -127,14 +98,15 @@ class Demo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Icon(
-                      Icons.add_shopping_cart,
+                      CupertinoIcons.cart,
                       color: Colors.white,
+                      size: 18,
                     ),
                     SizedBox(width: 6),
                     Text(
                       'Add to Cart',
                       style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 14,
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                       ),
@@ -144,38 +116,40 @@ class Demo extends StatelessWidget {
               ),
               onPressed: () {},
               shadowDegree: ShadowDegree.light,
-              color: Colors.green,
+              color: Colors.red,
             ),
+            SizedBox(height: 24),
             AnimatedButton(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
+                    SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                        strokeWidth: 2,
+                      ),
+                    ),
                     Text(
                       'Loading...',
                       style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 14,
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(width: 10),
-                    SizedBox(
-                      width: 30,
-                      height: 30,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                      ),
-                    )
                   ],
                 ),
               ),
               onPressed: () {},
+              color: Colors.amber,
+              disabledColor: Colors.amber,
+              enabled: false,
               shadowDegree: ShadowDegree.light,
-              color: Colors.amber[400],
-            ),
-            SizedBox(height: 20),
+            )
           ],
         ),
       ),

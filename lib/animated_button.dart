@@ -7,29 +7,30 @@ import 'package:flutter/material.dart';
 /// [duration] in milliseconds
 ///
 class AnimatedButton extends StatefulWidget {
-  final GestureTapCallback onPressed;
+  final Color color;
   final Widget child;
   final bool enabled;
-  final Color color;
-  final double height;
   final double width;
-  final ShadowDegree shadowDegree;
   final int duration;
-  final BoxShape shape;
+  final double height;
+  final Color disabledColor;
+  final double borderRadius;
+  final VoidCallback onPressed;
+  final ShadowDegree shadowDegree;
 
-  const AnimatedButton(
-      {Key? key,
-        required this.onPressed,
-        required this.child,
-        this.enabled = true,
-        this.color = Colors.blue,
-        this.height = 64,
-        this.shadowDegree = ShadowDegree.light,
-        this.width = 200,
-        this.duration = 70,
-        this.shape = BoxShape.rectangle})
-      : assert(child != null),
-        super(key: key);
+  const AnimatedButton({
+    Key? key,
+    required this.child,
+    required this.onPressed,
+    this.height = 40,
+    this.width = 140,
+    this.duration = 70,
+    this.enabled = true,
+    this.borderRadius = 12,
+    this.color = Colors.blue,
+    this.disabledColor = Colors.grey,
+    this.shadowDegree = ShadowDegree.light,
+  }) : super(key: key);
 
   @override
   _AnimatedButtonState createState() => _AnimatedButtonState();
@@ -59,15 +60,11 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                 height: _height,
                 width: widget.width,
                 decoration: BoxDecoration(
-                    color: widget.enabled
-                        ? darken(widget.color, widget.shadowDegree)
-                        : darken(Colors.grey, widget.shadowDegree),
-                    borderRadius: widget.shape != BoxShape.circle
-                        ? BorderRadius.all(
-                      Radius.circular(16),
-                    )
-                        : null,
-                    shape: widget.shape),
+                  color: widget.enabled
+                      ? darken(widget.color, widget.shadowDegree)
+                      : darken(widget.disabledColor, widget.shadowDegree),
+                  borderRadius: _getBorderRadius(),
+                ),
               ),
             ),
             AnimatedPositioned(
@@ -78,16 +75,10 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                 height: _height,
                 width: widget.width,
                 decoration: BoxDecoration(
-                    color: widget.enabled ? widget.color : Colors.grey,
-                    borderRadius: widget.shape != BoxShape.circle
-                        ? BorderRadius.all(
-                      Radius.circular(16),
-                    )
-                        : null,
-                    shape: widget.shape),
-                child: Center(
-                  child: widget.child,
+                  color: widget.enabled ? widget.color : widget.disabledColor,
+                  borderRadius: _getBorderRadius(),
                 ),
+                child: Center(child: widget.child),
               ),
             ),
           ],
@@ -112,6 +103,10 @@ class _AnimatedButtonState extends State<AnimatedButton> {
       _position = 4;
     });
     widget.onPressed();
+  }
+
+  BorderRadius? _getBorderRadius() {
+    return BorderRadius.circular(widget.borderRadius);
   }
 }
 

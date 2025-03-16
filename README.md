@@ -8,7 +8,7 @@ Providing simple animation, and many customizable attributes such height, width,
 
 Nothing difficult here, yet!
 
-![](giphy.gif) ![](example.png)
+![](https://raw.githubusercontent.com/Emadeddin-eibo/animated_button/master/giphy.gif)
 
 ## Simple Example
 ```dart
