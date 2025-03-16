@@ -20,12 +20,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-  return MaterialApp(
-    title: 'Animated Button Demo',
-    theme: ThemeData(
+    return MaterialApp(
+      title: 'Animated Button Demo',
+      theme: ThemeData(
         primarySwatch: Colors.blue,
-    ),
-    home: Demo(),
+      ),
+      home: Demo(),
     );
   }
 }
@@ -33,19 +33,19 @@ class MyApp extends StatelessWidget {
 class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
-    body: Center(
-      child: AnimatedButton(
+    return Scaffold(
+      body: Center(
+        child: AnimatedButton(
           child: Text(
-                'Simple button',
-                style: TextStyle(
-                fontSize: 22,
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-                ),
-           ),
-          onPressed: () {},
+            'Simple button',
+            style: TextStyle(
+              fontSize: 22,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
           ),
+          onPressed: () {},
+        ),
       ),
     );
   }
@@ -56,17 +56,16 @@ class Demo extends StatelessWidget {
 
 ```dart
 AnimatedButton(
-  child: ...,			// Child widget, Row, Text, Column,...etc.
-  onPressed: () {},  	// Callback for onTap event
-  duration: 70,  		// Animaton duration, default is 70 Milliseconds
-  height: 100,  		// Button Height, default is 64
-  width: 200,  			// Button width, default is 200
-  enabled: true,  		// When disabled, onTap won't be called
-  // Shadow color is generated from button color,
-  // here you have the option to make it darker
-  // for lighter colors such white!
-  shadowDegree: ShadowDegree.dark,
-  color: Colors.blue,
+child: ...,			    // Child widget, Row, Text, Column,...etc.
+onPressed: () {},  	// Callback for onTap event
+duration: 70,  		  // Animaton duration, default is 70 Milliseconds
+height: 100,  		  // Button Height, default is 64
+width: 200,  			  // Button width, default is 200
+enabled: true,  		// When disabled, onTap won't be called
+shadowDegree: ShadowDegree.dark, // Shadow color is generated from button color,
+color: Colors.blue,
+disabledColor: Colors.grey,
+borderRadius: 8,
 )
 
 ```

@@ -27,6 +27,7 @@ class Demo extends StatelessWidget {
               onPressed: () {},
               color: Colors.blue,
               enabled: true,
+              disabledColor: Colors.grey,
               shadowDegree: ShadowDegree.light,
               borderRadius: 8,
               duration: 85,
