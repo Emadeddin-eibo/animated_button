@@ -1,3 +1,11 @@
+## [0.3.1] - 16/March/2025
+* Update Sdk to sdk: ^3.5.0
+* [add] custom border radius
+* [add] custom disabled color
+* [remove] circle box shape
+* [update] default values
+* [update] example
+
 ## [0.2.0] - 20/March/2021
 * Migrated to null safety (Thanks to @Saad29)
 
