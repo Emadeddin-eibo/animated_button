@@ -32,9 +32,9 @@ class Demo extends StatelessWidget {
               borderRadius: 8,
               duration: 85,
               height: 40,
-              width: 120,
+              width: 140,
               child: Text(
-                'Simple button',
+                'Animated button',
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.white,

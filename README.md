@@ -35,16 +35,24 @@ class Demo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: AnimatedButton(
+        child:             AnimatedButton(
+          onPressed: () {},
+          color: Colors.blue,
+          enabled: true,
+          disabledColor: Colors.grey,
+          shadowDegree: ShadowDegree.light,
+          borderRadius: 8,
+          duration: 85,
+          height: 40,
+          width: 140,
           child: Text(
-            'Simple button',
+            'Animated button',
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 14,
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),
           ),
-          onPressed: () {},
         ),
       ),
     );
